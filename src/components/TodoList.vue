@@ -1,10 +1,10 @@
 <template>
-    <div class='card'>
-        <h2>To Do List</h2>
+    <div class='w-3/6 rounded shadow p-2 bg-green-200 flex flex-col'>
+        <h1>To Do List</h1>
         <ul>
             <Item v-for="item in todoListItem" :key="item.id" :itemProps="item" @removeItem="removeItem" @editItem="editItem"/>
         </ul>
-        <input v-on:keyup.enter="submitItem" type="text" placeholder="add new ToDo" v-model="formContent">
+        <input class="rounded m-2 flex p-2" v-on:keyup.enter="submitItem" type="text" placeholder="Add some text and press Enter" v-model="formContent">
     </div>
 </template>
 
@@ -46,7 +46,7 @@
             removeItem(removeId) { 
                 let index = this.todoListItem.findIndex(element => element.id == removeId);
                 this.todoListItem.splice(index, 1);
-                this.saveItem();
+                this.saveItems();
             },
             editItem(editedIem) { 
                 let index = this.todoListItem.findIndex(element => element.id == editedIem.id);
@@ -61,14 +61,4 @@
 </script>
 
 <style scoped>
-    .list{
-        flex: 1 auto;
-    }
-    .card {
-        /* border-radius: 30%; */
-        flex: 1 auto;
-        background-color:white;
-        box-shadow: 0px 5px 20px #555;
-
-    }
 </style>

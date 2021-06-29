@@ -1,6 +1,8 @@
 <template>
-  <div id="app">
-    <TodoList/>
+  <div id="app" class="h-screen overflow-hidden flex items-center justify-center">
+    <div class=" w-full p-8 flex justify-center font-sans">
+      <TodoList/>
+    </div>
   </div>
 </template>
 
@@ -17,13 +19,5 @@ export default {
 
 <style>
 #app {
-  display: flex;
-  width: 500px;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

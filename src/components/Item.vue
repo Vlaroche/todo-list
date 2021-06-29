@@ -1,7 +1,6 @@
 <template>
-    <li  class="list">
-        <!-- <input type="checkbox" :value="!item.isEnded" v-model="item.isEnded" @click="$emit('editItem', item)"> -->
-        <input type="checkbox" :value="!item.isEnded" v-model="item.isEnded">
+    <li  class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter" >
+        <input class="m-2" type="checkbox" :value="!item.isEnded" v-model="item.isEnded">
         <span :class="isEndedStyle">{{ item.content }}</span>
         <span @click="$emit('removeItem', item.id)" class="deleteIcon"> - </span>
     </li>
@@ -22,7 +21,6 @@
             item: {
                 handler(newItem) {
                     this.$emit('editItem', newItem)
-
                 },
                 deep: true
             }
@@ -39,11 +37,6 @@
 </script>
 
 <style scoped>
-    .list{
-        flex: 1 auto;
-        text-align: center;
-        list-style-type: none;
-    }
     .ended {
         text-decoration: line-through;
     }
@@ -54,8 +47,8 @@
         float:right;
         font-weight: bold;
         line-height: normal;
-        height:16px;
-        margin-top: 20px;
+        height:20px;
+        margin-top: 5px;
         text-align: center;
         text-decoration: none;
         width:16px;
